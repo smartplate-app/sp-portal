@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartPlate — פתרונות ניהול חכמים למסעדות</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f8f8f8;
+      color: #1a1a1a;
+      direction: rtl;
+    }
+
+    /* NAV */
+    nav {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo img {
+      height: 44px;
+      width: 44px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .nav-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-right: 10px;
+    }
+    .nav-left { display: flex; align-items: center; gap: 10px; }
+    .nav-contact {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    /* HERO */
+    .hero {
+      background: #1a1a2e;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px 70px;
+    }
+    .hero-logo {
+      margin: 0 auto 32px;
+      width: 100px;
+      height: 100px;
+    }
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 16px;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: #e94560;
+      color: #fff;
+      padding: 6px 20px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* PRODUCTS */
+    .products {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+    .products-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .products-sub {
+      text-align: center;
+      color: #666;
+      margin-bottom: 48px;
+      font-size: 1rem;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 36px 28px;
+      border: 1.5px solid #eee;
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .product-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      transform: translateY(-4px);
+    }
+    .product-icon {
+      font-size: 2.8rem;
+      margin-bottom: 16px;
+    }
+    .product-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #1a1a2e;
+    }
+    .product-desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #1a1a2e;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .product-card:hover .product-link {
+      background: #e94560;
+    }
+    .product-tag {
+      display: inline-block;
+      background: #f0f0f8;
+      color: #1a1a2e;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #1a1a2e;
+      color: #fff;
+      text-align: center;
+      padding: 70px 40px;
+    }
+    .about h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .about p {
+      font-size: 1rem;
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto 32px;
+      line-height: 1.8;
+    }
+    .about-contact {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .about-contact a {
+      color: #e94560;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border-bottom: 1px solid #e94560;
+      padding-bottom: 2px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 24px;
+      font-size: 0.82rem;
+    }
+    footer span { color: #e94560; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-left">
+      <div class="nav-logo">
+        <img src="https://base44.app/api/apps/69b697029d0cd0fecb49189b/files/mp/public/69b697029d0cd0fecb49189b/2bfe726f9_f8ea18926_IMG_0275.png" alt="SmartPlate" />
+      </div>
+      <span class="nav-title">SmartPlate</span>
+    </div>
+    <div class="nav-contact">office@smartplate.biz</div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-logo">
+      <img src="https://base44.app/api/apps/69b697029d0cd0fecb49189b/files/mp/public/69b697029d0cd0fecb49189b/2bfe726f9_f8ea18926_IMG_0275.png" alt="SmartPlate" />
+    </div>
+    <h1>פתרונות ניהול חכמים למסעדות</h1>
+    <p>כלים דיגיטליים מקצועיים לניהול עלויות, מלאי ודוחות תפעוליים — בזמן אמת</p>
+    <span class="hero-badge">🍽️ מאות לקוחות מאז 2006</span>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="products">
+    <h2 class="products-title">המוצרים שלנו</h2>
+    <p class="products-sub">בחר את הכלי המתאים לך</p>
+    <div class="products-grid">
+
+      <a href="https://foodcostapp.com" target="_blank" class="product-card">
+        <div class="product-icon">🧾</div>
+        <div class="product-tag">ניהול עלויות</div>
+        <div class="product-name">FoodCostApp</div>
+        <div class="product-desc">מערכת מתקדמת לניהול עלויות מזון, חשבוניות וספקים — בזמן אמת. מלאי, מתכונים ודוחות בלחיצה אחת.</div>
+        <span class="product-link">כניסה למערכת ←</span>
+      </a>
+
+      <a href="https://smart-plate-basic-copy-c14e4635.base44.app" target="_blank" class="product-card">
+        <div class="product-icon">🎯</div>
+        <div class="product-tag">הדגמה חינמית</div>
+        <div class="product-name">Smart DEMO</div>
+        <div class="product-desc">סביבת הדגמה מלאה למערכת SmartPlate — נסה את כל הפיצ'רים לפני שאתה מחליט. ללא התחייבות.</div>
+        <span class="product-link">נסה עכשיו ←</span>
+      </a>
+
+      <a href="https://smartplate.org" target="_blank" class="product-card">
+        <div class="product-icon">📊</div>
+        <div class="product-tag">דשבורד ניהולי</div>
+        <div class="product-name">SmartPlate Dashboard</div>
+        <div class="product-desc">דשבורד ניהולי לרשתות מסעדות — מכירות, שכר ועלויות בלחיצה אחת. נתונים חיים 24/7.</div>
+        <span class="product-link">לדשבורד ←</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about">
+    <h2>מי אנחנו?</h2>
+    <p>SmartPlate בונה כלים דיגיטליים לתעשיית המסעדנות הישראלית. אנחנו מאמינים שכל מסעדן מגיע לנתונים ברורים, בזמן אמת, בלי בירוקרטיה.</p>
+    <div class="about-contact">
+      <a href="mailto:office@smartplate.biz">office@smartplate.biz</a>
+      <a href="https://smartplatebasic.com">smartplatebasic.com</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 <span>SmartPlate</span> — כל הזכויות שמורות
+  </footer>
+
+</body>
+</html>

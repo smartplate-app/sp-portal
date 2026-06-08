@@ -232,13 +232,101 @@
     <p class="products-sub">בחר את הכלי המתאים לך</p>
     <div class="products-grid">
 
-      <a href="https://foodcostapp.com" target="_blank" class="product-card">
-        <div class="product-icon">🧾</div>
-        <div class="product-tag">ניהול עלויות</div>
-        <div class="product-name">FoodCostApp</div>
-        <div class="product-desc">מערכת מתקדמת לניהול עלויות מזון, חשבוניות וספקים — בזמן אמת. מלאי, מתכונים ודוחות בלחיצה אחת.</div>
-        <span class="product-link">כניסה למערכת ←</span>
-      </a>
+      <!-- FoodCostApp BIG ANIMATED CARD -->
+      <div class="product-card foodcost-hero-card" style="grid-column: 1 / -1; padding: 48px 40px; position:relative; overflow:hidden; min-height: 420px; display:flex; gap:48px; align-items:center; cursor:default;">
+        
+        <!-- Left: Text -->
+        <div style="flex:1; text-align:right; z-index:2;">
+          <div class="product-tag" style="margin-bottom:16px;">ניהול עלויות</div>
+          <div class="product-name" style="font-size:2.2rem; margin-bottom:16px;">FoodCostApp</div>
+          <div class="product-desc" style="font-size:1.05rem; line-height:1.8; margin-bottom:32px;">מערכת מתקדמת לניהול עלויות מזון, חשבוניות וספקים — בזמן אמת.<br>מלאי, מתכונים ודוחות בלחיצה אחת.<br><br>📦 הזמן מספקים ישירות דרך WhatsApp — עם פרטי ההזמנה המלאים, אוטומטית.</div>
+          <a href="https://foodcostapp.com" target="_blank" class="product-link" style="display:inline-block; background:#e63946; color:white; padding:14px 32px; border-radius:12px; font-weight:700; font-size:1rem; text-decoration:none;">כניסה למערכת ←</a>
+        </div>
+
+        <!-- Right: WhatsApp Order Animation -->
+        <div class="wa-animation-wrapper" style="flex:1; display:flex; justify-content:center; align-items:center; z-index:2;">
+          
+          <!-- Phone mockup -->
+          <div class="wa-phone" style="width:260px; background:#111; border-radius:36px; padding:12px; box-shadow:0 20px 60px rgba(0,0,0,0.4); border:3px solid #333; position:relative;">
+            
+            <!-- WhatsApp header -->
+            <div style="background:#075E54; border-radius:24px 24px 0 0; padding:12px 16px; display:flex; align-items:center; gap:10px;">
+              <div style="width:36px;height:36px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:18px;">🏪</div>
+              <div>
+                <div style="color:white;font-weight:700;font-size:13px;">ספק הירקות - דוד</div>
+                <div style="color:#a8d5a2;font-size:11px;">מחובר</div>
+              </div>
+            </div>
+
+            <!-- Chat body -->
+            <div style="background:#ECE5DD; padding:12px; min-height:280px; border-radius:0 0 24px 24px; position:relative; overflow:hidden;">
+              
+              <!-- Timestamp -->
+              <div style="text-align:center; margin-bottom:10px;">
+                <span style="background:rgba(0,0,0,0.15);color:#555;font-size:10px;padding:3px 10px;border-radius:8px;">היום, 09:14</span>
+              </div>
+
+              <!-- Order message bubble (animated in) -->
+              <div class="wa-bubble" style="background:white; border-radius:12px 12px 12px 0; padding:12px 14px; max-width:90%; margin-bottom:8px; box-shadow:0 1px 3px rgba(0,0,0,0.15); animation: slideInBubble 0.6s ease 0.5s both;">
+                <div style="color:#075E54; font-weight:700; font-size:11px; margin-bottom:8px; border-bottom:1px solid #eee; padding-bottom:6px;">📋 הזמנה חדשה — מסעדת הכרם</div>
+                <div style="font-size:11px; color:#333; line-height:1.7;">
+                  🥦 ברוקולי — 5 ק"ג<br>
+                  🍅 עגבניות שרי — 3 ק"ג<br>
+                  🥕 גזר — 10 ק"ג<br>
+                  🧅 בצל — 8 ק"ג<br>
+                  🫑 פלפל אדום — 4 ק"ג
+                </div>
+                <div style="margin-top:8px; padding-top:6px; border-top:1px solid #eee; font-size:10px; color:#888;">
+                  ⏰ משלוח מבוקש: מחר בבוקר<br>
+                  📍 רחוב הרצל 12, תל אביב
+                </div>
+                <div style="text-align:left; font-size:9px; color:#aaa; margin-top:4px;">09:14 ✓✓</div>
+              </div>
+
+              <!-- Reply bubble (animated in after) -->
+              <div class="wa-reply" style="background:#DCF8C6; border-radius:12px 12px 0 12px; padding:10px 12px; max-width:75%; margin-right:auto; margin-left:auto; margin-bottom:0; box-shadow:0 1px 3px rgba(0,0,0,0.15); animation: slideInReply 0.5s ease 2s both; float:left; clear:both;">
+                <div style="font-size:11px; color:#333;">✅ קיבלתי! מגיע מחר 7:00</div>
+                <div style="text-align:left; font-size:9px; color:#aaa; margin-top:3px;">09:15 ✓✓</div>
+              </div>
+
+              <!-- Sending animation indicator -->
+              <div class="wa-sending" style="position:absolute; bottom:16px; right:16px; animation: fadeInSend 0.4s ease 0.1s both;">
+                <div style="background:#25D366; color:white; font-size:10px; padding:5px 12px; border-radius:20px; display:flex; align-items:center; gap:6px;">
+                  <span>נשלח דרך</span>
+                  <span style="font-weight:700;">WhatsApp</span>
+                  <span>✓</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arrow from app to phone -->
+          <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; z-index:1; opacity:0.12; font-size:80px;">📲</div>
+        </div>
+
+        <!-- CSS Animations -->
+        <style>
+          @keyframes slideInBubble {
+            from { opacity:0; transform: translateY(20px); }
+            to { opacity:1; transform: translateY(0); }
+          }
+          @keyframes slideInReply {
+            from { opacity:0; transform: translateY(10px); }
+            to { opacity:1; transform: translateY(0); }
+          }
+          @keyframes fadeInSend {
+            from { opacity:0; }
+            to { opacity:1; }
+          }
+          .foodcost-hero-card {
+            background: linear-gradient(135deg, #ffffff 60%, #f0fff4 100%);
+          }
+          @media (max-width: 700px) {
+            .foodcost-hero-card { flex-direction: column !important; }
+            .wa-animation-wrapper { width: 100% !important; }
+          }
+        </style>
+      </div>
 
 
 
